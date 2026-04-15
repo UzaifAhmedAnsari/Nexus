@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusForge AI</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Phase 1</p>
+                <h1>NexusForge AI</h1>
+                <p class="subtitle">Pure JavaScript frontend + Express API + PostgreSQL + Docker</p>
+            </div>
+        </header>
+
+
+        <main class="layout">
+            <section class="card">
+                <h2>
+                    System Controls
+                </h2>
+                <div class="actions">
+                    <button id="load-bootstrap-btn">Load Bootstrap Data</button>
+                    <button id="check-health-btn">Check API + DB Health</button>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>
+                    App Status
+                </h2>
+                <div id="status"></div>
+            </section>
+
+            <section class="card">
+                <h2>Bootstrap Data</h2>
+                <pre id="bootstrap-output">No bootstrap data loaded yet.</pre>
+            </section>
+
+            <section class="card">
+                <h2>Health Response</h2>
+                <pre id="health-output">No health check run yet.</pre>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
