@@ -1,6 +1,8 @@
 export const state = {
     bootstrap: null,
     health: null,
+    users: null,
+    workspaces: null,
     loading: null,
     error:null,
 };

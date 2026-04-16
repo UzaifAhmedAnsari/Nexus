@@ -10,9 +10,9 @@
     <div class="app-shell">
         <header class="topbar">
             <div>
-                <p class="eyebrow">Phase 1</p>
+                <p class="eyebrow">Phase 2</p>
                 <h1>NexusForge AI</h1>
-                <p class="subtitle">Pure JavaScript frontend + Express API + PostgreSQL + Docker</p>
+                <p class="subtitle">Vanilla JS + Express API + PostgreSQL + Prisma + Docker</p>
             </div>
         </header>
 
@@ -25,6 +25,8 @@
                 <div class="actions">
                     <button id="load-bootstrap-btn">Load Bootstrap Data</button>
                     <button id="check-health-btn">Check API + DB Health</button>
+                    <button id="check-users-btn">Load Users</button>
+                    <button id="check-workspaces-btn">Load Workspaces</button>
                 </div>
             </section>
 
@@ -44,6 +46,17 @@
                 <h2>Health Response</h2>
                 <pre id="health-output">No health check run yet.</pre>
             </section>
+
+<section class="card">
+                <h2>Users Response</h2>
+                <pre id="health-output">No users loaded yet.</pre>
+            </section>
+
+<section class="card">
+                <h2>Workspaces Response</h2>
+                <pre id="health-output">No workspaces loaded run yet.</pre>
+            </section>
+
         </main>
     </div>
 

@@ -6,6 +6,8 @@ export function renderApp(state) {
     const statusEl = document.querySelector('#status');
     const bootstrapEl = document.querySelector('#bootstrap-output');
     const healthEl = document.querySelector('#health-output');
+    const usersEl = document.querySelector('#users-output');
+    const workspacesEl = document.querySelector('#workspaces-output');
 
 
     const statusType = state.error? 'error' : 'ok';
@@ -29,6 +31,14 @@ export function renderApp(state) {
 
     if (state.health) {
         healthEl.textContent = formatJson(state.health)
+    }
+
+    if (state.users) {
+        usersEl.textContent = formatJson(state.users)
+    }
+
+    if (state.workspaces) {
+        workspacesEl.textContent = formatJson(state.workspaces)
     }
 
 }

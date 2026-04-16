@@ -1,4 +1,4 @@
-import {getBootstrapData, getHealthData } from './services/api.js';
+import {getBootstrapData, getHealthData, getUsers, getWorkspaces } from './services/api.js';
 import {state, setState} from './store/app-store.js';
 import { renderApp } from './ui/render.js';
 
@@ -25,10 +25,33 @@ async function loadHealth() {
     }
 }
 
+async function loadUsers() {
+    try {
+        setState({loading: true, error: null});
+        const data = await getUsers();
+        setState({users: data, loading: false});
+    } catch (error) {
+        setState({error: error.message, loading: false});
+    }
+}
+
+
+async function loadWorkspaces() {
+    try {
+        setState({loading: true, error: null});
+        const data = await getWorkspaces();
+        setState({workspaces: data, loading: false});
+    } catch (error) {
+        setState({error: error.message, loading: false});
+    }
+}
+
 
 function bindEvents() {
     document.querySelector('#load-bootstrap-btn').addEventListener('click', loadBootstrap);
     document.querySelector('#check-health-btn').addEventListener('click', loadHealth);
+    document.querySelector('#check-users-btn').addEventListener('click', loadUsers);
+    document.querySelector('#check-workspaces-btn').addEventListener('click', loadWorkspaces);
 
     document.addEventListener('app:state-changed', (event) => {
         renderApp(event.detail);

@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:8000/api/v1';
+const API_BASE = '/api/v1';
 
 async function request(path) {
     const response = await fetch(`${API_BASE}${path}`, {
@@ -23,4 +23,12 @@ export function getBootstrapData(){
 
 export function getHealthData() {
     return request('/health');
+}
+
+export function getUsers() {
+    return request('/users');
+}
+
+export function getWorkspaces() {
+    return request('/workspaces');
 }
